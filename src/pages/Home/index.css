@@ -1,0 +1,48 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    width: 70%;
+    margin-top: 3rem;
+}
+
+.video {
+    background-color: rgba(155, 227, 192, 0.59);
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    width: 30%;
+    height: 30vh;
+}
+
+.panda-home {
+    background-color: rgba(155, 227, 192, 0.59);
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    width: 60%;
+    height: 50vh;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.panda-home p {
+    font-size: 2rem;
+    height: 70%;
+    text-align: center;
+    width: 60%;
+    margin-top: 2rem;
+}
