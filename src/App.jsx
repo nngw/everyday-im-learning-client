@@ -1,12 +1,10 @@
-import { useState } from 'react'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import * as Pages from './pages'
 import { NavBar } from './componants'
 
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -16,7 +14,7 @@ function App() {
           <Route path="/login" element={<Pages.Login />}/>
           <Route path="/register" element={<Pages.Register/>}/>
           <Route path="/focus" element={<Pages.Focus/>}/>
-          <Route path="/tasks" element={<Pages.Tasks/>}/>
+          <Route path="/profile" element={<Pages.Profile/>}/>
           <Route path="/NotFound" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
