@@ -22,6 +22,7 @@ const NavBar = () => {
             <NavLink to="/login" style={styles}>Login</NavLink>{' '}
             <NavLink to="/register" style={styles}>Register</NavLink>
           </div>
+
         </nav>
         <Outlet />
         <footer>
