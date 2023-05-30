@@ -17,7 +17,7 @@ const NavBar = () => {
           </div>
           <div className='main-nav'>
             <NavLink to="/" style={styles}>Home</NavLink>{' '}
-            <NavLink to="/user" style={styles}>Profile</NavLink>{' '}
+            <NavLink to="/profile" style={styles}>Profile</NavLink>{' '}
             <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
             <NavLink to="/login" style={styles}>Login</NavLink>{' '}
             <NavLink to="/register" style={styles}>Register</NavLink>
