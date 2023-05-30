@@ -15,7 +15,7 @@ function App() {
           <Route path="/login" element={<Pages.Login />}/>
           <Route path="/register" element={<Pages.Register/>}/>
           <Route path="/focus" element={<Pages.Focus/>}/>
-          <Route path="/user" element={<Pages.Profile/>}/>
+          <Route path="/profile" element={<Pages.Profile/>}/>
           <Route path="/NotFound" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
