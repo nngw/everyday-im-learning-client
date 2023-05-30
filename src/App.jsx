@@ -1,11 +1,11 @@
+
 import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { useAuthContext } from './hooks/useAuthContext'
 
 import * as Pages from './pages'
-import { NavBar } from './componants'
-
+import { NavBar, TaskForm } from './componants'
 
 function App() {
 
