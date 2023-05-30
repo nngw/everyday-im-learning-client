@@ -6,7 +6,7 @@ const styles = ({ isActive }) => ({ color: isActive ? '#000000' : '#272727' });
 const NavBar = () => {
   return (
     <>
-      <header>
+      <header className="header">
         <nav>
           <NavLink to="/" style={styles}>Home</NavLink>{' '}
           <NavLink to="/user" style={styles}>Profile</NavLink>{' '}
@@ -15,7 +15,7 @@ const NavBar = () => {
           <NavLink to="/register" style={styles}>Register</NavLink>
         </nav>
         <Outlet />
-        <footer>
+        <footer className="footer">
           <p>Click <a href="https://wwf.panda.org/discover/knowledge_hub/endangered_species/giant_panda/whatyoucando/">here</a> to find out more information to protect the pandas.</p>
         </footer>
       </header>

@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import * as Pages from './pages'
-import { NavBar } from './componants'
+import { NavBar } from './components'
+import "../assets/app.css";
 
 
 function App() {
