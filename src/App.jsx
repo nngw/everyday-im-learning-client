@@ -1,11 +1,11 @@
+
 import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { useAuthContext } from './hooks/useAuthContext'
 
 import * as Pages from './pages'
-import { NavBar } from './componants'
-
+import { NavBar, TaskForm } from './componants'
 
 function App() {
 
@@ -28,8 +28,8 @@ function App() {
             path="/focus" 
             element={user ? <Pages.Focus/> : <Navigate to="/login"/>}/>
           <Route 
-            path="/tasks" 
-            element={user ? <Pages.Tasks/> : <Navigate to="/login"/>}/>
+            path="/profile" 
+            element={user ? <Pages.Profile/> : <Navigate to="/login"/>}/>
           <Route path="/NotFound" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
