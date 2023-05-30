@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<NavBar />}>
+        <Route path="/" element={<NavBar />}>
           <Route index element={<Pages.Home />}/>
           <Route path="/login" element={<Pages.Login />}/>
           <Route path="/register" element={<Pages.Register/>}/>

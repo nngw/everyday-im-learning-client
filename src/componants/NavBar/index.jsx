@@ -1,19 +1,28 @@
-import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+
+const styles = ({ isActive }) => ({ color: isActive ? '#000000' : '#272727' });
 
 const NavBar = () => {
   return (
     <>
-      <nav>
-        NavBar
-      </nav>
-
-      <Outlet />
-
-      <footer>Footer</footer>
-      
+      <header>
+        <nav>
+          <NavLink to="/" style={styles}>Home</NavLink>{' '}
+          <NavLink to="/user" style={styles}>Profile</NavLink>{' '}
+          <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
+          <NavLink to="/login" style={styles}>Login</NavLink>{' '}
+          <NavLink to="/register" style={styles}>Register</NavLink>
+        </nav>
+        <Outlet />
+        <footer>
+          <p>Click <a href="https://wwf.panda.org/discover/knowledge_hub/endangered_species/giant_panda/whatyoucando/">here</a> to find out more information to protect the pandas.</p>
+        </footer>
+      </header>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
+
+
