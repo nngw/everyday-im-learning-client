@@ -17,12 +17,12 @@ function App() {
         <Route path='/' element={<NavBar />}>
           <Route 
             index 
-            element={user ? <Pages.Home /> : <Navigate to="/login"/>}/>
+            element={<Pages.Home />}/>
           <Route 
             path="/login"
             element={!user ? <Pages.Login /> : <Navigate to="/" />}/>
           <Route 
-            path="/signup" 
+            path="/register" 
             element={!user ? <Pages.Register/> : <Navigate to="/" />}/>
           <Route 
             path="/focus" 
