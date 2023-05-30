@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TaskForm } from "../../componants";
+import { TaskForm, TaskList } from "../../componants";
 
 const Profile = () => {
   const [inputText, setInputText] = useState('');
@@ -10,10 +10,10 @@ const Profile = () => {
   ]);
 
   return (
-    <div>
+     <div className='task-container'>
       <h1>Tasks</h1>
       <TaskForm inputText={inputText} setInputText={setInputText} tasks={tasks} setTasks={setTasks} />
-      {/* <TaskList tasks={tasks} setTasks={setTasks} /> */}
+       <TaskList tasks = {tasks} setTasks = {setTasks} />
     </div>
   );
 };
