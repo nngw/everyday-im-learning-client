@@ -26,7 +26,7 @@ describe('Header', () => {
     });
   
     it('renders the Profile link', () => {
-      const profileLink = screen.getByRole('link', { name: /user/i });
+      const profileLink = screen.getByRole('link', { name: /profile/i });
       expect(profileLink).toBeInTheDocument();
     });
 
