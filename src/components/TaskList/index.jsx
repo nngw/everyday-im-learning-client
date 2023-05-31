@@ -8,7 +8,7 @@ import {TaskItem} from '../'
 import './style.css'
 
 const TaskList = () => {
-  //const [tasks,setTasks] = useState('')
+ 
   const {user} = useAuthContext()
   const {tasks, dispatch} = useTasksContext()
   //const dispatch = useDispatch()
@@ -42,10 +42,13 @@ const TaskList = () => {
             payload: json
           })
         }
+        console.log(json)
       }
       if(user) {
         loadTasks()
       }
+      
+      // console.log(json)
     }, [dispatch, user]);
     
 // function deleteTask(task){
