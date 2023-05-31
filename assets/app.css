@@ -26,6 +26,8 @@ h1, h2, h3 {
 
 nav > a {
     margin-right: 0.5rem;
+    position: relative;
+    bottom: -100px;
 }
 
 header, footer, main {

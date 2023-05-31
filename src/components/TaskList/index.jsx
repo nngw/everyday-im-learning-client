@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 //import axios from 'axios';
-
+import { useTasksContext }  from '../../hooks/useTasksConext'
+import { useAuthContext } from '../../hooks/useAuthContext';
 import {TaskItem} from '../'
 import './style.css'
 
-const TaskList = (props) => {
-  const [dnd, updatednd] = useState(props.tasks); 
-
+const TaskList = () => {
+  //const [dnd, updatednd] = useState(''); 
+  //const [tasks,setTasks] = useState('')
+  const {user} = useAuthContext()
+  const {tasks, dispatch} = useTasksContext()
   // async function isCompleted(id, bool) {
   //   const options = {
   //       method: "PATCH",
@@ -17,20 +20,33 @@ const TaskList = (props) => {
   //           completed: bool
   //       })
   //   }
-  //   const response = await fetch(`http://localhost:3000/tasks/${id}`, options);
+  //   const response = await fetch(`http://localhost:9000/users/${id}/tasks/${id}`, options);
   //   const data = await response.json();
     
   //   setTasks(tasks.map(t => t.id == data.id ? { ...t, completed: data.completed } : t))
   // }
-//   useEffect(() => {
-//     async function loadTasks() {
-//         const response = await fetch(`http://localhost:3000/tasks`);
-//         const data = await response.json();
-//         setSnacks(data);
-//     };
+  useEffect(() => {
+    async function loadTasks() {
+        const response = await fetch(`http://localhost:9000/users/tasks`,{
+          headers: {
+            'Authorization': `Bearer ${user.token}`
+          }
+        })
+        const json = await res.json()
+        if (response.ok) {
+          dispatch({
+            type: 'SET_TASKS',
+            payload: json
+          })
+          console.log(json)
+        }
+      }
+      if(user) {
+        loadTasks()
+      }
+    }, [dispatch, user]);
     
-//     loadTasks();
-// }, [tasks])
+
 // function deleteTask(task){
 //   let filteredTask = props.tasks.filter(el => el !== task)
 //   props.setTasks(filteredTask)
@@ -40,6 +56,8 @@ const TaskList = (props) => {
   //           .filter(s => !TopPiroity || s.Piroity)
   //           .map()
   // }
+
+  //4 drag and drop
   function handleOnDragEnd(result) {
     if (!result.destination) return;
     const items = Array.from(dnd);
@@ -52,19 +70,19 @@ const TaskList = (props) => {
       <div className="tasks-container">
         <Droppable droppableId="task-list">
         {(provided) => (
-          <ul role = 'tasks' className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
-              {
-                  dnd.map(({text,id}, index) => {
-                      return (
-                        <Draggable key={id} draggableId={id} index={index}> 
-                        {(provided) => (
-                          <TaskItem  key={id} text={text} provided ={provided}/>
-                        )}
-                      </Draggable>
-                      )
-                  })
-              }
-             {provided.placeholder}
+          <ul className = "task-list" {...provided.droppableProps} ref={provided.innerRef}>
+            {
+              tasks.map(({task,id}, index) => {
+                return (
+                  <Draggable key={id} draggableId={id} index={index}> 
+                  {(provided) => (
+                    <TaskItem  key={id} task={task} provided ={provided}/>
+                  )}
+                </Draggable>
+                )
+              })
+            }
+            {provided.placeholder}
           </ul>
         )}
         </Droppable>

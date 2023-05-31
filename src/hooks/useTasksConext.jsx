@@ -1,9 +1,9 @@
 import { useContext } from "react"
 
-import { TasksContext } from "../context/TasksContext"
+import { tasksReducer  } from "../context/TasksContext"
 
 export const useTasksContext = () => {
-  const context = useContext(TasksContext)
+  const context = useContext(tasksReducer )
 
   if (!context) {
     throw Error('useTasksContext must be used inside TasksContextProvider')
