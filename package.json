@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest run --reporter verbose",
+    "test": "vitest --reporter verbose",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
