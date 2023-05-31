@@ -9,13 +9,13 @@ function TaskForm () {
     const {dispatch} = useTasksContext()
     const {user} = useAuthContext()
 
-    const [inputText, setInputText] = useState('');
-    const [duration, setDuration] = useState('')
+    const [task, setTask] = useState('');
+    const [time, setTime] = useState('')
     // const [error,setError] = useState(null)
     // const [emptyFields, setEmptyFields] = useState([])
     
     function handleInput(e) {
-        setInputText(e.target.value)
+        setTask(e.target.value)
     }
 
     async function handleSubmit(e) {
@@ -26,11 +26,11 @@ function TaskForm () {
         // ])
         // setInputText('')
 
-        const task = {inputText, duration}
+        const tasks = {task, time}
 
         const res = await fetch('http://localhost:9000/tasks', {
             method: 'POST',
-            body: JSON.stringify(task),
+            body: JSON.stringify(tasks),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -39,11 +39,9 @@ function TaskForm () {
 
         const json = await res.json()
 
-        console.log(user.token)
-
         if (res.ok) {
-            setDuration("")
-            setInputText("")
+            setTime("")
+            setTask("")
             console.log("new task added", json)
             dispatch({type: 'CREATE_TASK', payload: json})
         }
@@ -52,19 +50,21 @@ function TaskForm () {
     
     return (
         <form className ='TaskForm' onSubmit={handleSubmit}>
-            <label>Tasks</label>
-            <input 
-                value={inputText} 
+            <label htmlFor="add-task">Tasks</label>
+            <input
+                id="add-task"
+                value={task} 
                 type="text" 
                 className="task-input"
                 onChange={handleInput} 
                 aria-label="Input tasks"/>
 
-            <label>Task duration (min)</label>
-            <input 
+            <label htmlFor="add-time">Task duration (min)</label>
+            <input
+                id="add-time"
                 type="number" 
-                onChange={(e) => setDuration(e.target.value)}
-                value={duration}/>
+                onChange={(e) => setTime(e.target.value)}
+                value={time}/>
         
 
             <button type="submit" className="task-button" aria-label="Submit tasks">Add Task</button>

@@ -8,10 +8,11 @@ export const tasksReducer = (state, action) => {
       return{
         tasks:action.payload
       }
-
-    case 'CREATE_TASK':
-      return {
-        tasks: [action.payload, ...state.tasks]
+      
+      case 'CREATE_TASK':
+        console.log(state.tasks)
+        return {
+        tasks: [action.payload] // ...state.tasks removed for testing 
       }
 
     case 'DELETE_TASK':
