@@ -1,8 +1,16 @@
 import React,{useState} from "react";
 import './style.css'
 
+import { useTaskContext } from '../hooks/useTaskConext'
+import { useAuthContext } from '../hooks/useAuthContext'
+
 function TaskForm () {
+
+    
+    const {dispatch}  = useTasksContext()
+    const {user} = useAuthContext()
     const [inputText, setInputText] = useState('');
+
     function handleInput(e) {
         setInputText(e.target.value)
     }
@@ -11,7 +19,7 @@ function TaskForm () {
         e.preventDefault();
         setTasks([
             ...tasks,
-            {text: inputText, complted: false}
+            {text: inputText, completed: false}
         ])
         setInputText('')
     }
