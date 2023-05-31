@@ -5,9 +5,20 @@ import image from '../../../assets/panda.png';
 import '../../../assets/app.css'
 // import panda from '../../images/panda.png'
 
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
+
 const styles = ({ isActive }) => ({ color: isActive ? '#000000' : '#272727' });
 
 const NavBar = () => {
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+
+  const handleClick = () => {
+    logout()
+  }
+
+
   return (
     <>
       <header role = "banner" className="header">
@@ -18,6 +29,7 @@ const NavBar = () => {
           <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
           <NavLink to="/login" style={styles}>Login</NavLink>{' '}
           <NavLink to="/register" style={styles}>Register</NavLink>
+          <span> <button onClick={handleClick} >Logout</button> </span>
         </nav>
         <Outlet />
         <footer className="footer">
