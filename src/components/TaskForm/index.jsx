@@ -9,14 +9,7 @@ import './style.css'
 // import { useAuthContext } from '../hooks/useAuthContext'
 
 function TaskForm () {
-<<<<<<< HEAD
-
     
-    // const {dispatch}  = useTaskContext()
-    //const {user} = useAuthContext()
-    const [inputText, setInputText] = useState('');
-
-=======
     const {dispatch} = useTasksContext()
     const {user} = useAuthContext()
 
@@ -25,20 +18,12 @@ function TaskForm () {
     // const [error,setError] = useState(null)
     // const [emptyFields, setEmptyFields] = useState([])
     
->>>>>>> e68c69d55b8174b7f357910c610dad20c0fe7d5f
     function handleInput(e) {
         setInputText(e.target.value)
     }
 
     async function handleSubmit(e) {
         e.preventDefault();
-<<<<<<< HEAD
-        setTasks([
-            ...tasks,
-            {text: inputText, completed: false}
-        ])
-        setInputText('')
-=======
         // setTasks([
         //     ...tasks,
         //     {text: inputText, complted: false}
@@ -67,7 +52,6 @@ function TaskForm () {
             dispatch({type: 'CREATE_TASK', payload: json})
         }
 
->>>>>>> e68c69d55b8174b7f357910c610dad20c0fe7d5f
     }
     
     return (
