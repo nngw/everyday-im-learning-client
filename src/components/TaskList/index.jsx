@@ -19,7 +19,7 @@ const TaskList = () => {
   //           completed: bool
   //       })
   //   }
-  //   const response = await fetch(`http://localhost:9000/tasks`, options);
+  //   const response = await fetch(`http://localhost:9000/tasks/${id}`, options);
   //   const data = await response.json();
     
   //   setTasks(tasks.map(t => t.id == data.id ? { ...t, completed: data.completed } : t))
@@ -51,6 +51,7 @@ const TaskList = () => {
     
 // function deleteTask(task){
   // }
+  console.log(tasks)
 
   //4 drag and drop
   const [dnd, updatednd] = useState(tasks); 
