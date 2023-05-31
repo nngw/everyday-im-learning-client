@@ -1,7 +1,7 @@
 import React from 'react'
 import MainTitle from '../../components/MainTitle/index'
 import Bamboo from '../../components/Bamboo/index'
-
+import Button from '../../components/Button/index'
 import './index.css'
 const Home = () => {
   return (
@@ -18,7 +18,7 @@ const Home = () => {
             that helps you organise tasks, track productivity
             and most importantly protect your very own panda.
           </p>
-          <button>Register</button>
+          <Button name='Register'/>
         </div>
       </div>
     </div>

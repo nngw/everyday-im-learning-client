@@ -22,7 +22,6 @@
     width: 30%;
     height: 30vh;
 }
-
 .panda-home {
     background-color: rgba(155, 227, 192, 0.59);
     margin: 2rem;
@@ -40,9 +39,9 @@
     align-items: center;
 }
 .panda-home p {
-    font-size: 2rem;
-    height: 70%;
+    font-size: 1.8rem;
+    height: 55%;
     text-align: center;
     width: 60%;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
