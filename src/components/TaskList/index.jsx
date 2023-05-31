@@ -25,6 +25,7 @@ const TaskList = () => {
     
   //   setTasks(tasks.map(t => t.id == data.id ? { ...t, completed: data.completed } : t))
   // }
+
   useEffect(() => {
     async function loadTasks() {
         const response = await fetch(`http://localhost:9000/users/tasks`,{
@@ -67,6 +68,7 @@ const TaskList = () => {
 
   }
   return (
+    
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <div className="tasks-container">
         {!tasks ? <p>No task</p> : 
