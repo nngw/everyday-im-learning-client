@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 //import axios from 'axios';
-//import { useDispatch } from 'react-redux';
 import { useTasksContext }  from '../../hooks/useTasksConext'
 import { useAuthContext } from '../../hooks/useAuthContext';
 import {TaskItem} from '../'
@@ -11,7 +10,6 @@ const TaskList = () => {
  
   const {user} = useAuthContext()
   const {tasks, dispatch} = useTasksContext()
-  //const dispatch = useDispatch()
   // async function isCompleted(id, bool) {
   //   const options = {
   //       method: "PATCH",
@@ -21,7 +19,7 @@ const TaskList = () => {
   //           completed: bool
   //       })
   //   }
-  //   const response = await fetch(`http://localhost:9000/tasks/${id}`, options);
+  //   const response = await fetch(`http://localhost:9000/tasks`, options);
   //   const data = await response.json();
     
   //   setTasks(tasks.map(t => t.id == data.id ? { ...t, completed: data.completed } : t))
@@ -42,7 +40,7 @@ const TaskList = () => {
             payload: json
           })
         }
-        console.log(json)
+        //console.log(json)
       }
       if(user) {
         loadTasks()
@@ -92,27 +90,6 @@ const TaskList = () => {
 
       </div>    
     </DragDropContext>
-    // <div>
-    //   <div>TaskList</div>
-    //   <div className="todo-container">
-    //     <ul className = "todo-list">
-    //       {
-    //         tasks.map((tasks,idx) => {
-    //           return <li>
-    //                     <li key={idx} className="tasks">
-    //                       <span className="tasks-listed">{tasks.Task}</span>
-    //                       <button aria-label='mark task as complete' className="complete-btn">Done</button>
-    //                     </li>
-    //                       <li className="break">
-    //                       <span className="break-listed">Break 15 mins</span>
-    //                       {/* <button aria-label='mark task as complete' className="complete-btn">Done</button> */}
-    //                     </li>  
-    //                  </li>   
-    //         })
-    //       }
-    //     </ul>
-    //   </div> 
-    // </div>
   )
 }
 
