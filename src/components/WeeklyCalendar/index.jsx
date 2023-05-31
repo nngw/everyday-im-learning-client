@@ -13,7 +13,7 @@ const WeeklyCalendar = () => {
            <div className='calendar-container'>
         <Calendar onChange={setDate} value={date} />
       </div>
-      <p className='text-center'>
+      <p className='text-center' data-testid='selected-date'>
       <span className='bold'>Selected Date:</span>{' '}
         {date.toDateString()}
       </p>
