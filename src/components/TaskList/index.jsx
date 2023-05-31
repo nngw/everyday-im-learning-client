@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+//import axios from 'axios';
 
 import {TaskItem} from '../'
 import './style.css'
@@ -51,7 +52,7 @@ const TaskList = (props) => {
       <div className="tasks-container">
         <Droppable droppableId="task-list">
         {(provided) => (
-          <ul className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
+          <ul role = 'tasks' className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
               {
                   dnd.map(({text,id}, index) => {
                       return (
