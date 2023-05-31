@@ -1,12 +1,12 @@
 import React from 'react'
 import './style.css'
 
-const TaskItem = ({text,provided}) => {
+const TaskItem = ({task,provided}) => {
   return (
     <>
       <li className="task" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-        <span className="task-item">{text}</span>
-        <button aria-label='mark task as complete' className="complete-btn">Done</button>
+        <span className="task-item">{task}</span>
+        <button aria-label='delete task button' className="delete-btn">Delete</button>
         {/* <button aria-label = 'delete task' className="trash-btn"
           onClick ={()=> deleteTask(task)}>&#128465;</button> */}
       </li>

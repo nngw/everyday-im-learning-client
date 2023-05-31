@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { useAuthContext } from './hooks/useAuthContext'
@@ -11,6 +11,7 @@ import { NavBar } from './components'
 function App() {
 
   const {user} = useAuthContext()
+  // console.log(user)
 
   return (
     <>
@@ -21,16 +22,16 @@ function App() {
             element={<Pages.Home />}/>
           <Route 
             path="/login"
-            element={user ? <Pages.Login /> : <Navigate to="/login" />}/>
+            element={!user ? <Pages.Login /> : <Navigate to="/profile" />}/>
           <Route 
             path="/register" 
-            element={user ? <Pages.Register/> : <Navigate to="/register" />}/>
+            element={!user ? <Pages.Register/> : <Navigate to="/profile" />}/>
           <Route 
             path="/focus" 
-            element={user ? <Pages.Focus/> : <Navigate to="/login"/>}/>
+            element={user ? <Pages.Focus /> : <Navigate to="/login" />}/>
           <Route 
             path="/profile" 
-            element={<Pages.Profile/>}/>
+            element={user ? <Pages.Profile /> : <Navigate to="/login"/>}/>
           <Route path="/NotFound" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
