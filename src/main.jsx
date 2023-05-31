@@ -8,8 +8,6 @@ import { AuthContextProvider } from './context/AuthContext'
 import App from './App.jsx'
 import './main.css'
 
-import './main.css'
-
 ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthContextProvider>
       <TaskContextProvider>
