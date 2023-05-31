@@ -6,11 +6,11 @@ import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Login from '.';
+import Register from '.';
 
 describe('Clicker componant', () => {
   beforeEach(() => {
-    render(<Login />)
+    render(<Register />)
   })
 
   afterEach(() => {
