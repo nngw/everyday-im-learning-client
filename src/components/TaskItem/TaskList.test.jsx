@@ -5,10 +5,13 @@ import {screen,render,cleanup} from '@testing-library/react'
 import userEvent from'@testing-library/user-event'
 import matchers from '@testing-library/jest-dom/matchers'
 expect.extend(matchers)
+
+import TestUtils from 'react-dom/test-utils'
+import expect from 'expect'
 //needs axios for testing
 //import axios from 'axios'
 
-import TaskList from '.'
+import TaskItem from '.'
 
 // describe('FetchTest Compnonet', () => {
   
@@ -34,23 +37,33 @@ import TaskList from '.'
 
 describe('TaskList Compnonet', () => {
     beforeEach(()=>{
-        render(<TaskList />)
+        render(<TaskItem />)
     })
 
     afterEach(() => {
         cleanup()
     })
     //it could also be test
-    it('should display a list appropriate text', () => {
-        const element = screen.getByRole('list')
-        expect(element).toBeInTheDocument()
-    })
+    it('can be tested independently', () => {
+        // Obtain the reference to the component before React DnD wrapping
+        const OriginalItem = TaskItem.DecoratedComponent
+      
+        // Stub the React DnD connector functions with an identity function
+        const identity = (el) => el
+      
+        // Render with one set of props and test
+        let root = TestUtils.renderIntoDocument(
+          <OriginalItem name="test" connectDragSource={identity} />
+        )
+        let div = TestUtils.findRenderedDOMComponentWithTag(root, 'div')
+        expect(div.props.style.opacity).toEqual(1)
+      
+        // Render with another set of props and test
+        root = TestUtils.renderIntoDocument(
+          <OriginalItem name="test" connectDragSource={identity} isDragging />
+        )
+        div = TestUtils.findRenderedDOMComponentWithTag(root, 'div')
+        expect(div.props.style.opacity).toEqual(0.4)
+      })
 
-    it('should increment the display when the button is clicked', async () => {
-        const display = screen.getByRole('number')
-        const button = screen.getByRole('button')
-        expect(display.textContent).toEqual('0')
-        await userEvent.click(button)
-        expect(display.textContent).toEqual('1')
-    })
 })

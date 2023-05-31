@@ -10,7 +10,7 @@ const styles = ({ isActive }) => ({ color: isActive ? '#000000' : '#272727' });
 const NavBar = () => {
   return (
     <>
-      <header className="header">
+      <header role = "banner" className="header">
       <img src={image} alt="panda waving" className="logo"/>
         <nav className="links">
           <NavLink to="/" style={styles}>Home</NavLink>{' '}

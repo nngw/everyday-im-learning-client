@@ -49,10 +49,10 @@ const TaskList = (props) => {
   }
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-      <div role ="list" className="tasks-container">
+      <div className="tasks-container">
         <Droppable droppableId="task-list">
         {(provided) => (
-          <ul className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
+          <ul role = 'tasks' className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
               {
                   dnd.map(({text,id}, index) => {
                       return (

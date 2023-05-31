@@ -1,6 +1,6 @@
 import React from 'react'
-import MainTitle from '../../componants/MainTitle/index'
-import Bamboo from '../../componants/Bamboo/index'
+import MainTitle from '../../components/MainTitle/index'
+import Bamboo from '../../components/Bamboo/index'
 
 import './index.css'
 const Home = () => {
