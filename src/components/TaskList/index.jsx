@@ -10,7 +10,7 @@ import './style.css'
 
 const TaskList = () => {
   //const [dnd, updatednd] = useState(''); 
-  //const [tasks,setTasks] = useState('')
+  // const [tasks,setTasks] = useState('')
   const {user} = useAuthContext()
   
   const {tasks, dispatch} = useTasksContext()
@@ -39,18 +39,20 @@ const TaskList = () => {
         const json = await response.json()
         if (response.ok) {
           dispatch({
-            type: 'SET_TASKS',
+            type: 'SET_TASK',
             payload: json
           })
-          console.log(json)
         }
+        console.log(json)
       }
       if(user) {
         loadTasks()
       }
+      
+      // console.log(json)
     }, [dispatch, user]);
     
-    console.log(tasks)
+    // console.log(user.token)
 // function deleteTask(task){
 //   let filteredTask = props.tasks.filter(el => el !== task)
 //   props.setTasks(filteredTask)
