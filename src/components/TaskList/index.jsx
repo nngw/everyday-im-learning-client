@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 //import axios from 'axios';
+
+
 import { useTasksContext }  from '../../hooks/useTasksConext'
 import { useAuthContext } from '../../hooks/useAuthContext';
 import {TaskItem} from '../'
@@ -10,6 +12,7 @@ const TaskList = () => {
   //const [dnd, updatednd] = useState(''); 
   //const [tasks,setTasks] = useState('')
   const {user} = useAuthContext()
+  
   const {tasks, dispatch} = useTasksContext()
   // async function isCompleted(id, bool) {
   //   const options = {
@@ -33,6 +36,7 @@ const TaskList = () => {
             'Authorization': `Bearer ${user.token}`
           }
         })
+
         const json = await response.json()
         if (response.ok) {
           dispatch({
