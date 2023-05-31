@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TaskForm, TaskList } from "../../components";
+import { TaskForm, TaskList, WeeklyCalendar} from "../../components";
 import './style.css'
 
 const Profile = () => {
@@ -15,7 +15,6 @@ const Profile = () => {
       <h1>Tasks</h1>
       <TaskList />
       <TaskForm />
-      
     </div>
   );
 };
