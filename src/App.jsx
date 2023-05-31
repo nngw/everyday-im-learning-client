@@ -6,7 +6,6 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 import * as Pages from './pages'
 import { NavBar } from './components'
-import "../assets/app.css";
 
 
 function App() {
@@ -25,7 +24,7 @@ function App() {
             element={!user ? <Pages.Login /> : <Navigate to="/profile" />}/>
           <Route 
             path="/register" 
-            element={!user ? <Pages.Register /> : <Navigate to="/profile" />}/>
+            element={!user ? <Pages.Register/> : <Navigate to="/profile" />}/>
           <Route 
             path="/focus" 
             element={user ? <Pages.Focus /> : <Navigate to="/login" />}/>
