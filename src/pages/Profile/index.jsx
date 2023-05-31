@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TaskForm, TaskList } from "../../componants";
+import { TaskForm, TaskList } from "../../components";
 import './style.css'
 
 const Profile = () => {
