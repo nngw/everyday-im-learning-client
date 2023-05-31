@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
 import {TaskItem} from '../'
+import './style.css'
 
 const TaskList = (props) => {
+  const [dnd, updatednd] = useState(props.tasks); 
 
   // async function isCompleted(id, bool) {
   //   const options = {
@@ -26,23 +30,45 @@ const TaskList = (props) => {
     
 //     loadTasks();
 // }, [tasks])
-
+// function deleteTask(task){
+//   let filteredTask = props.tasks.filter(el => el !== task)
+//   props.setTasks(filteredTask)
+// }
   // function displaytasks() {
   //   return tasks
   //           .filter(s => !TopPiroity || s.Piroity)
   //           .map()
   // }
+  function handleOnDragEnd(result) {
+    if (!result.destination) return;
+    const items = Array.from(dnd);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    updatednd(items);
+  }
   return (
-    <div className="tasks-container">
-        <ul className = "task-list">
-            {
-                props.tasks.map((task,idx) => {
-                    return <TaskItem  key={idx} task={task} />
-                })
-            }
-          
-        </ul>
-    </div>
+    <DragDropContext onDragEnd={handleOnDragEnd}>
+      <div className="tasks-container">
+        <Droppable droppableId="task-list">
+        {(provided) => (
+          <ul className = "task-list"{...provided.droppableProps} ref={provided.innerRef}>
+              {
+                  dnd.map(({text,id}, index) => {
+                      return (
+                        <Draggable key={id} draggableId={id} index={index}> 
+                        {(provided) => (
+                          <TaskItem  key={id} text={text} provided ={provided}/>
+                        )}
+                      </Draggable>
+                      )
+                  })
+              }
+             {provided.placeholder}
+          </ul>
+        )}
+        </Droppable>
+      </div>    
+    </DragDropContext>
     // <div>
     //   <div>TaskList</div>
     //   <div className="todo-container">
