@@ -32,7 +32,7 @@ const TaskList = () => {
             'Authorization': `Bearer ${user.token}`
           }
         })
-        const json = await res.json()
+        const json = await response.json()
         if (response.ok) {
           dispatch({
             type: 'SET_TASKS',
@@ -46,7 +46,7 @@ const TaskList = () => {
       }
     }, [dispatch, user]);
     
-
+    console.log(tasks)
 // function deleteTask(task){
 //   let filteredTask = props.tasks.filter(el => el !== task)
 //   props.setTasks(filteredTask)
@@ -64,10 +64,13 @@ const TaskList = () => {
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
     updatednd(items);
+
   }
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <div className="tasks-container">
+        {!tasks ? <p>No task</p> : 
+        <>
         <Droppable droppableId="task-list">
         {(provided) => (
           <ul className = "task-list" {...provided.droppableProps} ref={provided.innerRef}>
@@ -86,6 +89,8 @@ const TaskList = () => {
           </ul>
         )}
         </Droppable>
+          </>}
+
       </div>    
     </DragDropContext>
     // <div>
