@@ -11,7 +11,6 @@ import './main.css'
 import './main.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <AuthContextProvider>
       <TaskContextProvider>
         <BrowserRouter>
@@ -19,5 +18,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </TaskContextProvider>
     </AuthContextProvider>
-  </React.StrictMode>,
 )
