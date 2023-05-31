@@ -6,6 +6,7 @@ import { TaskContextProvider } from './context/TasksContext'
 import { AuthContextProvider } from './context/AuthContext'
 
 import App from './App.jsx'
+import './main.css'
 
 import './main.css'
 

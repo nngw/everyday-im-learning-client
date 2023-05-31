@@ -5,7 +5,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
 import * as Pages from './pages'
-import { NavBar, TaskForm } from './componants'
+import { NavBar } from './components'
+import "../assets/app.css";
+
 
 function App() {
 
