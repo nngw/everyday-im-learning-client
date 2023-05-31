@@ -6,14 +6,15 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import './style.css'
 
 const TaskItem = ({task,provided}) => {
-  console.log(provided.draggableProps[1])
   const { dispatch } = useTasksContext()
   const { user } = useAuthContext()
-
+  
   const handleClick = async (e) => {
     e.preventDefault()
-
-    const res = await fetch('http://localhost:9000/tasks/' + task._id, {
+    
+    const taskId = provided.draggableProps["data-rbd-draggable-id"]
+    
+    const res = await fetch('http://localhost:9000/tasks/' + taskId, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

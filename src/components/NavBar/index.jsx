@@ -22,7 +22,7 @@ const NavBar = () => {
     logout()
   }
   
-  console.log(burgerNav)
+  // console.log(burgerNav)
   return (
     <>
       <header role="banner">
