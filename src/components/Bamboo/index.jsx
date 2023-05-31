@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-import bamboo from '../../images/bamboo.png'
+import bamboo from '../../../assets/bamboo.png'
 
 function Bamboo() {
   return (
