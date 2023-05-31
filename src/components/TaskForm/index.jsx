@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import './style.css'
 
-function TaskForm ({inputText, setInputText, tasks, setTasks}) {
+function TaskForm () {
+    const [inputText, setInputText] = useState('');
     function handleInput(e) {
         setInputText(e.target.value)
     }
