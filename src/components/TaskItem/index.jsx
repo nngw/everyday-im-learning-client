@@ -45,19 +45,19 @@ const TaskItem = ({task,provided }) => {
   
   return (
     <>
-      <ul className="task" /*ref={dragDropRef} style={{opacity}}*/ ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-        <span className="task-item">{task}</span>
-        <button 
-          aria-label='delete task button' 
-          className="delete-task-btn"
-          onClick={handleClick}>
-          <span className="material-symbols-outlined">delete</span>
-        </button>
-        <li className="break" >
-          <span className="break-item">break</span>
-        </li>
-      </ul>
-      
+      <div className='task-container'>
+          <ul className="task" /*ref={dragDropRef} style={{opacity}}*/ ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+            <div className='task-del-container'>
+              <span className="task-item">{task}</span>
+              <button aria-label='delete task button' className="delete-task-btn" onClick={handleClick}>
+                <span className="material-symbols-outlined">delete</span>
+              </button>
+            </div>
+            <li className="break" >
+              <span className="break-item">break</span>
+            </li>
+          </ul>
+      </div>
     </>
    
   )

@@ -1,3 +1,8 @@
+.calendar-container {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
 .react-calendar {
   width: 400px;
   max-width: 100%;
@@ -82,4 +87,10 @@
   border-bottom-right-radius: 6px;
   background: #b0f3b4;
   color: white;
+}
+
+.text-center {
+  text-align: center;
+  padding: 0.2rem;
+  font-size: 1.2rem;
 }

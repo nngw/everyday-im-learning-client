@@ -1,12 +1,6 @@
 .tasks-container{
-    background-color: rgba(151, 255, 180, 0.459);
-    width: 280px;
-    padding: 5px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    min-height: 200px;
-   }
-   
+    width: 80%;
+    height: 50%;
+    overflow-y: scroll;
+    height: 100%;
+}

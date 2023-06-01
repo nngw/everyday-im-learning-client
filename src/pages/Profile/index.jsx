@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { TaskForm, TaskList, WeeklyCalendar} from "../../components";
 import './style.css'
 import MainTitle from "../../components/MainTitle";
-
 const Profile = () => {
   //const [inputText, setInputText] = useState('');
 
@@ -10,10 +9,13 @@ const Profile = () => {
   return (
      <div className='profile-container'>
       <MainTitle  title='Tasks'/>
-      <TaskList />
-      <TaskForm />
+      <div className="cal-form-container">
+        <TaskList />
+        <WeeklyCalendar/>
+      </div>
+        <TaskForm />
     </div>
   );
 };
 
-export default Profile;
+export default Profile

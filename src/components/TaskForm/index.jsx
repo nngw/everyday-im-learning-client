@@ -2,6 +2,7 @@ import React,{useState} from "react";
 
 import { useTasksContext } from "../../hooks/useTasksConext";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Button from '../Button/index'
 
 import './style.css'
 
@@ -52,26 +53,29 @@ function TaskForm () {
     }
     
     return (
-        <form className ='TaskForm' onSubmit={handleSubmit}>
-            <label htmlFor="add-task">Tasks</label>
-            <input
-                id="add-task"
-                value={task} 
-                type="text" 
-                className="task-input"
-                onChange={handleInput} 
-                aria-label="Input tasks"/>
+        <div className="task-form-container">
+            <form className ='task-form' onSubmit={handleSubmit}>
+                <div class='focus-input-container'>
+                    <label htmlFor="add-task">Tasks</label>
+                    <input
+                        id="add-task"
+                        value={task} 
+                        type="text" 
+                        onChange={handleInput} 
+                        aria-label="Input tasks"/>
+                </div>
 
-            {/* IN FUTURE RELEASE TIME CAN BE SET BY THE USER */}
-            {/* <label htmlFor="add-time">Task duration (min)</label>
-            <input
-                id="add-time"
-                type="number" 
-                onChange={(e) => setTime(e.target.value)}
-                value={time}/> */}
-        
-            <button type="submit" className="task-button" aria-label="Submit tasks">Add Task</button>
-        </form>
+                {/* IN FUTURE RELEASE TIME CAN BE SET BY THE USER */}
+                {/* <label htmlFor="add-time">Task duration (min)</label>
+                <input
+                    id="add-time"
+                    type="number" 
+                    onChange={(e) => setTime(e.target.value)}
+                    value={time}/> */}
+            
+                <Button type="submit" className="task-button" aria-label="Submit tasks" name='Submit Task'></Button>
+            </form>
+        </div>
     )
 }
 

@@ -9,7 +9,7 @@
     margin-top: 3rem;
 }
 .video {
-    background-color: rgba(155, 227, 192, 0.59);
+    background-color: rgba(155, 227, 192);
     margin: 2rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -21,7 +21,7 @@
     height: 30vh;
 }
 .panda-home {
-    background-color: rgba(155, 227, 192, 0.59);
+    background-color: rgba(155, 227, 192);
     margin: 2rem;
     padding: 1rem;
     border-radius: 1rem;
