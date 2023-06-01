@@ -6,12 +6,23 @@ import panda from '../../../assets/images/panda.png'
 import './index.css'
 const styles = ({ isActive }) => ({ color: isActive ? '#000000' : '#929292' });
 
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
+
 const NavBar = () => {
   const [burgerNav, setBurgerNav] = useState(false);
   const BurgerNavClick = () => {
     setBurgerNav(!burgerNav);
   }
-  console.log(burgerNav)
+  
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+
+  const handleClick = () => {
+    logout()
+  }
+  
+  // console.log(burgerNav)
   return (
     <>
       <header role="banner">
@@ -26,6 +37,7 @@ const NavBar = () => {
                   <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
                   <NavLink to="/login" style={styles}>Login</NavLink>{' '}
                   <NavLink to="/register" style={styles}>Register</NavLink>
+                  <span> <button onClick={handleClick} >Logout</button> </span>
               </nav>
 
               <div onClick={BurgerNavClick} className='burger-nav'>
@@ -43,6 +55,7 @@ const NavBar = () => {
               </div>
           </div>
       </header>
+
         <Outlet />
 
         <footer className="footer">
