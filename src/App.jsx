@@ -31,7 +31,7 @@ function App() {
           <Route 
             path="/profile" 
             element={user ? <Pages.Profile /> : <Navigate to="/login"/>}/>
-          <Route path="/NotFound" element={<Pages.NotFound/>}/>
+          <Route path="*" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
     </>
