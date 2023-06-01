@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link} from 'react-router-dom'
 import { useLogin } from '../../hooks/useLogin'
 import Button from '../../components/Button/index'
 import './index.css'
@@ -24,7 +24,7 @@ const Login = () => {
         onSubmit={handleSubmit}
         >
           <div className='container-title'>
-              <h3 className='reg'>Register</h3>
+          <h3 className='reg'><Link to='/register'>Register</Link></h3>
               <h3 className='login'>Login</h3>
           </div>
           <div>

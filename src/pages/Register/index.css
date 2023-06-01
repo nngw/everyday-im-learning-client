@@ -5,7 +5,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .register-container form {
   background-color: #9BE3C0;
   width: 35%;
@@ -21,23 +20,10 @@
   align-items: center;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
-.container-title {
-  display: flex;
-  width: 70%;
-}
-.container-title h3 {
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 3.5rem;
-}
 .login-reg {
     border-bottom: 3px solid #DBFAF5;
-    color: #929292;
 }
-.login-reg:hover {
-  color:rgb(22, 22, 22);
-}
+
 .reg-reg {
   border-bottom: 3px solid #42af7a;
   color:rgb(22, 22, 22);

@@ -30,16 +30,20 @@
   cursor: pointer;
   margin-bottom: 3.5rem;
 }
+.container-title a {
+  text-decoration: none;
+  width: 50%;
+  color: #929292;
+}
+.container-title a:hover {
+  color:rgb(22, 22, 22);
+}
 .login {
   border-bottom: 3px solid #42af7a;
   color:rgb(22, 22, 22);
 }
 .reg {
   border-bottom: 3px solid #DBFAF5;
-  color: #929292;
-}
-.reg:hover {
-  color:rgb(22, 22, 22);
 }
 input, label {
   display: block;
