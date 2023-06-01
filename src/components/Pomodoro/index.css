@@ -52,3 +52,12 @@
         margin-top: -3rem;
     }
 }
+@media only screen and (max-width: 550px) {
+    .image-container {
+    margin-top: -10rem;
+}
+.image-container img{
+    width: 15rem;
+    height: 15rem;
+}
+}
