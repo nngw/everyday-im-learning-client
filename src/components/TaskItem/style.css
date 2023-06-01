@@ -1,0 +1,28 @@
+.break{
+    min-height: 8px;
+    width: 200px;
+    background-color: #90fffd;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.task{
+    min-height: 20px;
+    width: 200px;
+    background-color: #56d26e;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+
+}
+ul {
+    list-style-type: none;
+  }

@@ -5,18 +5,19 @@ import { MemoryRouter } from 'react-router-dom';
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Home from '.';
+import MainTitle from '.';
 
-describe('Home Page', () => {
+
+describe('TaskList Compnonet', () => {
     beforeEach(()=>{
-        render(<Home />)
+        render(<MainTitle />)
     })
 
     afterEach(() => {
         cleanup()
     })
     //it could also be test
-    it('should display home', () => {
+    it('should display main title', () => {
         const element = screen.getByRole('heading')
         expect(element).toBeInTheDocument()
     })

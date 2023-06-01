@@ -1,12 +1,12 @@
 import React from 'react'
 import './index.css'
 
-import bamboo from '../../images/bamboo.png'
+import bamboo from '../../../assets/images/bamboo.png'
 
 function Bamboo() {
   return (
     <>
-      <img src={bamboo} alt='Bamboo' />
+      <img className='bamboo' src={bamboo} alt='Bamboo' />
     </>
   )
 }

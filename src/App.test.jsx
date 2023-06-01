@@ -8,7 +8,7 @@ expect.extend(matchers);
 
 import App from './App';
 
-describe('App', () => {
+describe('main app test', () => {
   beforeEach(() => {
     render(
       <MemoryRouter initialEntries={['/']}>
@@ -27,7 +27,7 @@ describe('App', () => {
   });
 
   it('renders the Home page by default', () => {
-    const homePage = screen.getByText(/home/i);
+    const homePage = screen.getByText(/Home/i);
     expect(homePage).toBeInTheDocument();
   });
 });

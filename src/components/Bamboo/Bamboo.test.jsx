@@ -5,20 +5,19 @@ import { MemoryRouter } from 'react-router-dom';
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Home from '.';
+import Bamboo from '.';
 
-describe('Home Page', () => {
+describe('Bamboo Compnonet', () => {
     beforeEach(()=>{
-        render(<Home />)
+        render(<Bamboo />)
     })
 
     afterEach(() => {
         cleanup()
     })
     //it could also be test
-    it('should display home', () => {
-        const element = screen.getByRole('heading')
+    it('should display img of bamboo', () => {
+        const element = screen.getByRole('img')
         expect(element).toBeInTheDocument()
     })
-
 })

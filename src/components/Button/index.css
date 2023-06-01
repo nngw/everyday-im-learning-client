@@ -1,0 +1,27 @@
+.btn {
+    width: 12rem;
+    height: 3.2rem;
+    background-color: #DBFAF5;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    border: 1px solid #42af7a;
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -ms-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+  }
+  
+  .btn:hover {
+    background-color: #42af7a;
+    border: 1px solid #DBFAF5;
+  }
