@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
 import { useTasksContext }  from '../../hooks/useTasksConext'
 //import { useAuthContext } from '../../hooks/useAuthContext';
+import StepProgressBar from '../ProgressBar';
 import Button from '../Button/index'
 import './index.css'
 
