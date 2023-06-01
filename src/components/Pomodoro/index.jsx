@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
-
+import { useTasksContext }  from '../../hooks/useTasksConext'
+//import { useAuthContext } from '../../hooks/useAuthContext';
 import './index.css'
 
 const Pomodoro = () => {
   const [isActive, setIsActive] = useState(false);
   const [time, setTime] = useState(25 * 60);
-
+  const {tasks, dispatch} = useTasksContext()
+  
   useEffect(() => {
     let interval = null;
 

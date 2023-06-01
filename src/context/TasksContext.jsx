@@ -12,7 +12,7 @@ export const tasksReducer = (state, action) => {
       }
       
       case 'CREATE_TASK':
-        console.log(state.tasks)
+        //console.log(state.tasks)
         return {
         tasks: [...state.tasks, action.payload] 
       }
