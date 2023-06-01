@@ -1,4 +1,4 @@
-import Reac, {useState} from 'react';
+import React, {useState} from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 import panda from '../../../assets/images/panda.png'
