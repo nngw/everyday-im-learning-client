@@ -14,7 +14,7 @@ function TaskForm () {
     const {user} = useAuthContext()
 
     const [task, setTask] = useState('');
-    const [time, setTime] = useState('')
+    const [time, setTime] = useState(25) //IN FUTURE THIS CAN BE SET BY THE USER
     // const [error,setError] = useState(null)
     // const [emptyFields, setEmptyFields] = useState([])
     
@@ -44,12 +44,11 @@ function TaskForm () {
         const json = await res.json()
 
         if (res.ok) {
-            setTime("")
-            setTask("")
+            setTime(25)//IN FUTURE THIS WILL BE RESET SO THAT IT CAN BE SET BY THE USER
+            setTask("") 
             console.log("new task added", json)
             dispatch({type: 'CREATE_TASK', payload: json})
         }
-
     }
     
     return (
@@ -63,12 +62,13 @@ function TaskForm () {
                 onChange={handleInput} 
                 aria-label="Input tasks"/>
 
-            <label htmlFor="add-time">Task duration (min)</label>
+            {/* IN FUTURE RELEASE TIME CAN BE SET BY THE USER */}
+            {/* <label htmlFor="add-time">Task duration (min)</label>
             <input
                 id="add-time"
                 type="number" 
                 onChange={(e) => setTime(e.target.value)}
-                value={time}/>
+                value={time}/> */}
         
 
             <button type="submit" className="task-button" aria-label="Submit tasks">Add Task</button>
