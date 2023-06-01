@@ -2,16 +2,19 @@ import React, { createContext, useReducer } from 'react'
 
 export const TaskContext = createContext()
 
+
+
 export const tasksReducer = (state, action) => {
   switch (action.type) {
     case 'SET_TASK':
       return{
         tasks:action.payload
       }
-
-    case 'CREATE_TASK':
-      return {
-        tasks: [action.payload, ...state.tasks]
+      
+      case 'CREATE_TASK':
+        console.log(state.tasks)
+        return {
+        tasks: [action.payload,...state.tasks] 
       }
 
     case 'DELETE_TASK':

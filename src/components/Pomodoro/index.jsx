@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import image from '../../../assets/lying_panda.png'
+import image from '../../../assets/images/lying_panda.png'
+
+import './index.css'
 
 const Pomodoro = () => {
   const [isActive, setIsActive] = useState(false);

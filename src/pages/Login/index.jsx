@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
 import { useLogin } from '../../hooks/useLogin'
+import Button from '../../components/Button/index'
+import './index.css'
 
-import './style.css'
 
 const Login = () => {
 
@@ -18,41 +19,38 @@ const Login = () => {
   }
 
   return (
-    <div className='login'> 
+    <div className='login-container'>
       <form 
         onSubmit={handleSubmit}
         >
           <div className='container-title'>
-            <div>
-              <h3>Login</h3>
-            </div>
-            <div>
-              <h3>Register</h3>
-            </div>
+              <h3 className='reg'>Register</h3>
+              <h3 className='login'>Login</h3>
           </div>
           <div>
 
           </div>
         
-        <div>
-        <label>Email:
-          <input 
-            type="text" 
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            />
-        </label>
+        <div className="input-container">
+            <label htmlFor="email-input" className='label'>Email:</label>
+            <input
+              id="email-input"
+              type="text" 
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              />
         </div>
-        <label>Password:</label>
-        <input 
-          type="password" 
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          />
-        
-        <button 
-          disabled={isLoading}
-          >Submit</button>
+
+        <div className="input-container">
+          <label htmlFor="reg-input" className='label'>Password:</label>
+          <input
+            id="reg-input"
+            type="password" 
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            />
+          </div>
+          <Button name='Login' disabled={isLoading}/>
         {error && <div className="error">{error}</div>}
       </form>
     </div>
