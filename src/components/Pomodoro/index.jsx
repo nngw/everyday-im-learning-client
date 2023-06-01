@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
-import { useTasksContext }  from '../../hooks/useTasksConext'
+import { useTasksContext } from '../../hooks/useTasksConext'
 //import { useAuthContext } from '../../hooks/useAuthContext';
-import Button from '../Button/index'
+// import Button from '../Button/index'
 import './index.css'
 
 const Pomodoro = () => {
@@ -37,7 +37,8 @@ const Pomodoro = () => {
   }, [isBreak]);
   
 
-  const handleStart = () => { 
+  const handleStart = () => {
+    console.log('Start button clicked');
     setIsActive(true);
   };
 
@@ -81,7 +82,6 @@ const Pomodoro = () => {
     for (let i = 0; i < tasks.length; i++) {
       if (!tasks[i].completed) {
         activeTask = tasks[i].task;
-        setInterval((setIsBreak (true)), 5000)
         break;
       }
     }
@@ -104,11 +104,11 @@ const Pomodoro = () => {
       <div className="pomodoro-text">{formatTime(time)}</div>
       <div className="pom-button">
         {!isActive ? (
-          <Button onClick={handleStart} className="start-btn" name='Start'></Button>
+          <button onClick={handleStart} className="btn" name='Start'>Start</button>
         ) : (
-          <Button onClick={handlePause} name='Pause'></Button>
+          <button onClick={handlePause} className="btn" >Pause</button>
         )}
-        <Button onClick={handleReset} className="reset-btn" name='Reset'></Button>
+        <button onClick={handleReset} className="btn" name='Reset'>Reset</button>
       </div>
       <div className="task-list">
       </div>
