@@ -1,12 +1,11 @@
 .task-form-container{
-    width: 60%;
-    margin: 1rem;
+    width: 70%;
+    margin-left: 8rem;
+    margin-top: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .task-form{
-    width: 80%;
+    width: 53%;
     background-color: #9BE3C0;
     display: flex;
     flex-direction: column;
@@ -35,4 +34,14 @@
     border-image: linear-gradient(to right, #358a61, #42af7a);
     border-image-slice: 1;
   }
-  
+  .panda-container {
+    width: 35%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+  }
+  .waving-panda {
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+  }

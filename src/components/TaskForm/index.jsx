@@ -3,6 +3,7 @@ import React,{useState} from "react";
 import { useTasksContext } from "../../hooks/useTasksConext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Button from '../Button/index'
+import Panda from '../../../assets/images/waving_panda.gif'
 
 import './style.css'
 
@@ -55,7 +56,7 @@ function TaskForm () {
     return (
         <div className="task-form-container">
             <form className ='task-form' onSubmit={handleSubmit}>
-                <div class='focus-input-container'>
+                <div className='focus-input-container'>
                     <label htmlFor="add-task">Tasks</label>
                     <input
                         id="add-task"
@@ -75,6 +76,9 @@ function TaskForm () {
             
                 <Button type="submit" className="task-button" aria-label="Submit tasks" name='Submit Task'></Button>
             </form>
+            <div className="panda-container">
+                <img className='waving-panda' src={Panda} alt='Panda' />
+            </div>
         </div>
     )
 }
