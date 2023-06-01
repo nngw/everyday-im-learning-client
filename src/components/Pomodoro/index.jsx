@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
 import { useTasksContext }  from '../../hooks/useTasksConext'
 //import { useAuthContext } from '../../hooks/useAuthContext';
+import Button from '../Button/index'
 import './index.css'
 
 const Pomodoro = () => {
@@ -49,13 +50,13 @@ const Pomodoro = () => {
       </div>
       <h3 className="pom-text">Time to focus!</h3>
       <div className="pomodoro-text" data-testid="pomodoro-text">{formatTime(time)}</div>
-      <div className="pom-button">
+      <div className="pom-buttons">
         {!isActive ? (
-          <button onClick={handleStart} className="start-btn">Start</button>
+          <Button onClick={handleStart} className="start-btn" name='Start'></Button>
         ) : (
-          <button onClick={handlePause}>Pause</button>
+          <Button onClick={handlePause} name='Pause'></Button>
         )}
-        <button onClick={handleReset} className="reset-btn">Reset</button>
+        <Button onClick={handleReset} className="reset-btn" name='Reset'></Button>
       </div>
     </div>
   );  

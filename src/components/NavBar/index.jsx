@@ -1,4 +1,4 @@
-import Reac, {useState} from 'react';
+import React, {useState} from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 import panda from '../../../assets/images/panda.png'
@@ -37,7 +37,7 @@ const NavBar = () => {
                     <div>
                         <NavLink to="/profile" style={styles}>Profile</NavLink>
                         <NavLink to="/focus" style={styles}>Focus</NavLink>
-                        <NavLink onClick={handleClick}>Logout</NavLink>
+                        <NavLink onClick={handleClick} className='logout-nav'>Logout</NavLink>
                     </div>
                 )}
 
@@ -61,7 +61,7 @@ const NavBar = () => {
                     <>
                         <NavLink to="/profile" style={styles}>Profile</NavLink>
                         <NavLink to="/focus" style={styles}>Focus</NavLink>
-                        <NavLink onClick={handleClick}>Logout</NavLink>
+                        <NavLink onClick={handleClick} className='logout-nav'>Logout</NavLink>
                     </>
                 )}
 
