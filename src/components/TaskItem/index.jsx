@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { useDrag, useDrop } from 'react-dnd'
 import { useTasksContext }  from '../../hooks/useTasksConext'
 import { useAuthContext } from '../../hooks/useAuthContext';
 
