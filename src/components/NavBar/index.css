@@ -30,6 +30,9 @@ header {
     margin-right: 1rem;
     position: relative;
 }
+.logout-nav {
+    color: #929292;
+}
 .main-nav a {
     text-decoration: none;
     padding: 1.6rem;
