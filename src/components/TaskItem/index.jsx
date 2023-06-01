@@ -31,21 +31,9 @@ const TaskItem = ({task,provided }) => {
     }
   } 
 
-//   const [{ isDragging }, dragRef] = useDrag({
-//     type: 'item',
-//     item: { index },
-//     collect: (monitor) => ({
-//         isDragging: monitor.isDragging(),
-//     }),
-// })
-
-//   const ref = useRef(null)
-//   const dragDropRef = dragRef(dropRef(ref))
-//   const opacity = isDragging ? 0 : 1
-  
   return (
     <>
-      <ul className="task" /*ref={dragDropRef} style={{opacity}}*/ ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+      <ul className="task" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
         <span className="task-item">{task}</span>
         <button 
           aria-label='delete task button' 
