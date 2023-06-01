@@ -45,3 +45,15 @@
     height: 10rem;
     margin: 2rem;
   }
+@media only screen and (max-width: 1450px) {
+  .panda-container {
+    display: none;
+  }
+  .task-form-container{
+    justify-content: center;
+    margin-left: 0rem;
+}
+.task-form{
+  width: 100%;
+}
+}

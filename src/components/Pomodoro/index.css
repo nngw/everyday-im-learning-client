@@ -41,3 +41,14 @@
     display: flex;
     justify-content: space-around;
 }
+@media only screen and (max-width: 1450px) {
+    .pom-buttons {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .pom-text {
+        font-size: 2rem;
+        margin-top: -3rem;
+    }
+}

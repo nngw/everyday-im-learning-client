@@ -83,3 +83,9 @@
 .react-calendar__navigation__label {
   background: purple;
 }
+
+@media only screen and (max-width: 1450px) {
+  .calendar-container {
+    display: none;
+  }
+}
