@@ -1,0 +1,6 @@
+.pomodoro-container {
+    display: flex;
+    bordeR: 1px solid blue;
+    height: 80vh;
+    justify-content: center;
+}

@@ -10,14 +10,18 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-calendar": "^4.2.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
+    "react-step-progress-bar": "^1.0.3",
     "vitest": "^0.31.1"
   },
   "devDependencies": {

@@ -25,3 +25,9 @@
     background-color: #42af7a;
     border: 1px solid #DBFAF5;
   }
+
+@media only screen and (max-width: 360px) {
+  .btn {
+    margin-top: 3.5rem;
+  }
+}

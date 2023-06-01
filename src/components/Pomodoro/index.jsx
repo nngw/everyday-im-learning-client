@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
 import { useTasksContext }  from '../../hooks/useTasksConext'
-
+//import { useAuthContext } from '../../hooks/useAuthContext';
+import Button from '../Button/index'
 import './index.css'
 
 const Pomodoro = () => {
@@ -11,7 +12,6 @@ const Pomodoro = () => {
   const [time, setTime] = useState(1 * 60);
   const {tasks, dispatch} = useTasksContext()
   const [activeTaskIndex, setActiveTaskIndex] = useState(-1);
-
 
   useEffect(() => {
     let interval = null;
@@ -104,11 +104,11 @@ const Pomodoro = () => {
       <div className="pomodoro-text">{formatTime(time)}</div>
       <div className="pom-button">
         {!isActive ? (
-          <button onClick={handleStart} className="start-btn">Start</button>
+          <Button onClick={handleStart} className="start-btn" name='Start'></Button>
         ) : (
-          <button onClick={handlePause}>Pause</button>
+          <Button onClick={handlePause} name='Pause'></Button>
         )}
-        <button onClick={handleReset} className="reset-btn">Reset</button>
+        <Button onClick={handleReset} className="reset-btn" name='Reset'></Button>
       </div>
       <div className="task-list">
       </div>
