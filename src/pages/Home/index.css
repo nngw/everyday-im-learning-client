@@ -3,13 +3,11 @@
     flex-direction: column;
     align-items: center;
 }
-
 .main-container {
     display: flex;
     width: 70%;
     margin-top: 3rem;
 }
-
 .video {
     background-color: rgba(155, 227, 192, 0.59);
     margin: 2rem;
@@ -42,6 +40,38 @@
     font-size: 1.8rem;
     height: 55%;
     text-align: center;
-    width: 60%;
+    width: 80%;
     margin-top: 3rem;
+}
+
+@media only screen and (max-width: 1450px) {
+    .video {
+        display: none;
+    }
+    .main-container {
+        width: 100%;
+        justify-content: right;
+    }
+    .panda-home {
+        width: 50%;
+        margin-right: 2rem;
+    }
+    .panda-home p {
+        font-size: 1.2rem;
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .main-container {
+        width: 100%;
+        justify-content: center;
+    }
+    .panda-home {
+        width: 80%;
+        height: 40vh;
+    }
+    .panda-home p {
+        font-size: 1rem;
+        width: 50%;
+    }
 }
