@@ -7,28 +7,40 @@ import {TaskItem} from '../'
 import './style.css'
 
 const TaskList = () => {
- 
+  
   const {user} = useAuthContext()
   const {tasks, dispatch} = useTasksContext()
 
+  async function loadTasks() {
+    const response = await fetch(`http://localhost:9000/tasks`,{
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
+    })
+    const json = await response.json()
+    sessionStorage.setItem("tasks", JSON.stringify(json));
+    if (response.ok) {
+      dispatch({
+        type: 'SET_TASK',
+        payload: json
+      })
+    
+    }
+  }
+
   useEffect(() => {
-    async function loadTasks() {
-        const response = await fetch(`http://localhost:9000/tasks`,{
-          headers: {
-            'Authorization': `Bearer ${user.token}`
-          }
-        })
-        const json = await response.json()
-        if (response.ok) {
-          dispatch({
-            type: 'SET_TASK',
-            payload: json
-          })
-        }
-      }
       if(user) {
-        loadTasks()
-      }
+        if(localStorage.getItem('tasks') == null){
+           loadTasks()
+          }else{
+            const items =  JSON.parse(localStorage.getItem('tasks'));
+            dispatch({
+              type: 'SET_TASK',
+              payload: items
+            })
+          }
+       }
+      
     }, [dispatch, user]);
   
               
@@ -38,6 +50,7 @@ const TaskList = () => {
     const items = Array.from(tasks);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
+      localStorage.setItem('tasks', JSON.stringify(items));
     dispatch({
       type: 'SET_TASK',
       payload: items

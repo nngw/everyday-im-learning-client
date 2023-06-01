@@ -44,12 +44,12 @@ function TaskForm () {
         })
 
         const json = await res.json()
-
+       
         if (res.ok) {
             setTime(25)//IN FUTURE THIS WILL BE RESET SO THAT IT CAN BE SET BY THE USER
             setTask("") 
             console.log("new task added", json)
-            dispatch({type: 'CREATE_TASK', payload: json})
+            dispatch({type: 'CREATE_TASK', payload: json}) 
         }
     }
     
