@@ -12,6 +12,7 @@ const Profile = () => {
       <MainTitle  title='Tasks'/>
       <TaskList />
       <TaskForm />
+      <WeeklyCalendar />
     </div>
   );
 };
