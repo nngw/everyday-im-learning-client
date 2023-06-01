@@ -1,0 +1,7 @@
+.progressBar {
+    transform: scale(1.8);
+    position: relative;
+    margin-left: 270px;
+    top: 150px;
+    right: 140px;
+}

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-import image from '../../assets/lying_panda.png';
-import StepProgressBar from './ProgressBar';
 import image from '../../../assets/images/lying_panda.png'
+import StepProgressBar from '../../components/ProgressBar';
 import './index.css'
 
 const Pomodoro = () => {
@@ -49,6 +47,7 @@ const Pomodoro = () => {
     return percent;
   };
   
+
   const progressPercent = calculateProgressPercent(time);
 
   return (
@@ -57,16 +56,16 @@ const Pomodoro = () => {
         <img src={image} alt="panda lying down" className="lying-panda" />
       </div>
       <h3 className="pom-text">Time to focus!</h3>
-      <div className="pomodoro-text" data-testid="pomodoro-text">
+      <div className="pomodoro-time" data-testid="pomodoro-text">
         {formatTime(time)}
       </div>
-      <div className="pom-button">
+      <div>
         {!isActive ? (
           <button onClick={handleStart} className="start-btn">
             Start
           </button>
         ) : (
-          <button onClick={handlePause}>Pause</button>
+          <button onClick={handlePause} className="start-btn">Pause</button>
         )}
         <button onClick={handleReset} className="reset-btn">
           Reset

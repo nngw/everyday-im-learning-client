@@ -1,0 +1,12 @@
+.oh-no-panda{
+    width: 700px;
+    height: 600px;
+    position: relative;
+    left: 300px;
+}
+
+.confused{
+    position: relative;
+    right: 100px;
+    bottom: 200px;
+}

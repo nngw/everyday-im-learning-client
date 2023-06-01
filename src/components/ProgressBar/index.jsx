@@ -1,6 +1,7 @@
 import React from "react";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
+import './index.css'
 
 const StepProgressBar = ({ percent }) => {
   return (
@@ -14,7 +15,7 @@ const StepProgressBar = ({ percent }) => {
           <img
             style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
             width="30"
-            src="https://em-content.zobj.net/thumbs/120/facebook/355/grinning-face-with-sweat_1f605.png"
+            src="https://em-content.zobj.net/source/microsoft-teams/363/writing-hand_270d-fe0f.png"
           />
         )}
       </Step>

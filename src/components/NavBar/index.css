@@ -72,3 +72,9 @@ header {
         display: none;
     }
 }
+
+.footer {
+    position: relative;
+    bottom: 10x;
+    right: 300px;
+}

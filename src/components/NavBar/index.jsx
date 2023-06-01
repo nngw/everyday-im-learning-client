@@ -1,6 +1,6 @@
-import Reac, {useState} from 'react';
+import React, {useState} from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-
+import Footer from '../Footer'
 import panda from '../../../assets/images/panda.png'
 
 import './index.css'
@@ -55,12 +55,7 @@ const NavBar = () => {
               </div>
           </div>
       </header>
-
         <Outlet />
-
-        <footer className="footer">
-          <p>Click <a href="https://wwf.panda.org/discover/knowledge_hub/endangered_species/giant_panda/whatyoucando/">here</a> to find out more information to protect the pandas.</p>
-        </footer>
     </>
   );
 };

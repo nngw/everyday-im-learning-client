@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 24px;
+    color: #272727;
+    background: #DBFAF5;
+}
+
+#root {
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+nav > a {
+    margin-right: 0.5rem;
+}
+
+header, footer, main {
+    padding: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex: 1;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+input[type=text] {
+    margin-left: 0.1rem;
+}
+
+
+.logo {
+    width: 55px;
+    height: 70px;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+}
+
+.pomodoro-div {
+    background: #9BE3C0;
+    width: 850px;
+    height: 550px;
+    border-radius: 10px;
+    padding: 20px 270px;
+    position: relative;
+    top: 180px;
+    left: 280px;
+}
+
+.image-container {
+    position: absolute;
+    top: 50px;
+    left: 320px;
+}
+
+.lying-panda {
+    width: 380px;
+    position: relative;
+    top: -270px;
+    right: -170px;
+}
+
+.pom-text {
+    font-size: 30px;
+    position: relative;
+    top: 60px;
+    right: 190px;
+}
+
+.pom-button {
+    position: relative;
+    bottom: 0px;
+    right: 190px;
+}
+
+.start-btn {
+    position: relative;
+    top: 50px;
+    left: 90px;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #DBFAF5;
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+}
+
+.reset-btn {
+    position: relative;
+    top: 50px;
+    left: 350px;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #DBFAF5;
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+}
+
+.pomodoro-time {
+    font-size: 160px;
+    font-weight: 700px;
+    position: relative;
+    top: 30px;
+    left: 230px;
+}
+
+.header {
+    background: #9BE3C0;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.footer {
+    position: relative;
+    top: 340px;
+    left: 23px;
+}
+
+.links {
+    position: relative;
+    left: 80px;
+    bottom: 80px;
+}

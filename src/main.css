@@ -16,7 +16,13 @@ body{
     height: 100vh;
     color: #272727;
     background-image: linear-gradient(to bottom, #DBFAF5, #BAF2E9);
+    /*
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+    */
 }
+
 /*
 * {
     box-sizing: border-box;
