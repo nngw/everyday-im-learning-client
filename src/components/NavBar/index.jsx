@@ -32,12 +32,21 @@ const NavBar = () => {
           </div>
           <div>
               <nav className='main-nav'>
-                  <NavLink to="/" style={styles}>Home</NavLink>{' '}
-                  <NavLink to="/profile" style={styles}>Profile</NavLink>{' '}
-                  <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
-                  <NavLink to="/login" style={styles}>Login</NavLink>{' '}
-                  <NavLink to="/register" style={styles}>Register</NavLink>
-                  <span> <button onClick={handleClick} >Logout</button> </span>
+                <NavLink to="/" style={styles}>Home</NavLink>{' '}
+                {user && (
+                    <div>
+                        <NavLink to="/profile" style={styles}>Profile</NavLink>{' '}
+                        <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
+                        <NavLink onClick={handleClick}>Logout</NavLink>
+                    </div>
+                )}
+
+                {!user && (
+                    <div>
+                        <NavLink to="/login" style={styles}>Login</NavLink>{' '}
+                        <NavLink to="/register" style={styles}>Register</NavLink>
+                    </div>
+                )}
               </nav>
 
               <div onClick={BurgerNavClick} className='burger-nav'>
