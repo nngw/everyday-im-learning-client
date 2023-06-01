@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 24px;
+    color: #272727;
+    background:#DBFAF5;
+}
+#root {
+    font-family: ‘Inter’, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1, h2, h3 {
+    line-height:1.2;
+}
+nav > a {
+    margin-right: 0.5rem;
+}
+header, footer, main {
+    padding: 1rem;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex: 1;
+}
+h1 {
+    font-size: 3rem;
+}
+input[type=text] {
+    margin-left: 0.1rem;
+}
+button {
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background:#DBFAF5;
+    font-family: ‘Inter’, sans-serif;
+    border-radius: 10px;
+}
+.logo {
+    width: 55px;
+    height: 70px;
+    position: relative;
+    bottom: 20px;
+    left: 5px;
+}
+.pomodoro-div {
+    background: #9BE3C0;
+    width: 800px;
+    height: 400px;
+    border-radius: 10px;
+    padding: 20px 270px;
+    position: relative;
+    top: 180px
+}
+.image-container {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.lying-panda {
+    width: 380px;
+    position: relative;
+    top: -270px;
+    right: -170px;
+}
+.pom-text {
+    font-size: 30px;
+    position: relative;
+    top: 20px;
+    right: 190px
+}
+.pom-button {
+    position: relative;
+    bottom: 0px;
+    right: 190px;
+}
+.start-btn {
+    position: relative;
+    bottom: 0px;
+    left: 90px;
+}
+.reset-btn {
+    position: relative;
+    bottom: 60px;
+    left: 350px;
+}
+.pomodoro-text {
+    font-size: 100px;
+    position: relative;
+    top: 0px;
+    left: -10px
+}
+.header {
+    background: #9BE3C0;
+    height: 70px;
+    border-radius: 10px;
+}
+.footer {
+    position: relative;
+    top: 340px;
+    left: 23px;
+}
+.links {
+    position: relative;
+    left: 80px;
+    bottom: 80px;
+}
+.progressBar {
+    width: 780px;
+    height: 100px;
+    position: relative;
+    right: 270px;
+    top: 70px;
+}
