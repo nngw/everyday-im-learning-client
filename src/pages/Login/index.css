@@ -68,3 +68,20 @@ input, label {
   background-color: transparent;
 }
 
+@media only screen and (max-width: 1200px) {
+  .login-container form {
+    width: 60%;
+  }
+  .container-title {
+    display: flex;
+    width: 50%;
+  }
+  .container-title h3 {
+    margin-bottom: 1.5rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .login-container form {
+    width: 80%;
+  }
+}
