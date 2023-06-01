@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
 import { useTasksContext }  from '../../hooks/useTasksConext'
@@ -9,8 +10,8 @@ const Pomodoro = () => {
   const [isBreak, setIsBreak] = useState(false); //this will be used to determine if the user is on a break or not
   const [time, setTime] = useState(1 * 60);
   const {tasks, dispatch} = useTasksContext()
+  const [activeTaskIndex, setActiveTaskIndex] = useState(-1);
 
-  console.log(tasks)
 
   useEffect(() => {
     let interval = null;
@@ -21,13 +22,22 @@ const Pomodoro = () => {
       }, 1000);
     } else if (!isActive && time === 0) {
       clearInterval(interval);
-      logTasks(time)
+      handleTimerEnd();
     }
-
     return () => clearInterval(interval);
   }, [isActive, time]);
 
-  const handleStart = () => {
+  useEffect(() => { //this will be used to determine if the user is on a break or not
+    if (isBreak) {
+      setTime(1 * 30);
+    } else {
+      setActiveTaskIndex(getNextIncompleteTaskIndex());
+      setTime(1 * 30);
+    }
+  }, [isBreak]);
+  
+
+  const handleStart = () => { 
     setIsActive(true);
   };
 
@@ -37,12 +47,13 @@ const Pomodoro = () => {
 
   const handleReset = () => {
     setIsActive(false);
-    setTime(25 * 60);
+    setIsBreak(false);
+    setTime(1 * 30);
+    setActiveTaskIndex(-1);
   };
 
   const handleTimerEnd = () => {
-    setIsBreak(true); //this will be changed to true when the timer ends
-    setTime(5 * 60); //this will be changed to 5 minutes
+    setIsBreak(!isBreak);
   };
 
   const formatTime = (time) => {
@@ -51,26 +62,32 @@ const Pomodoro = () => {
     return `${minutes}:${seconds}`;
   };
 
-  const logTasks = (time) => {
-    // const taskElement = []; //this is where the tasks will be displayed
+  const getNextIncompleteTaskIndex = () => {
     let activeTaskIndex = -1;
 
-    for ( let i = 0; i < tasks.length; i++){
-      if (tasks[i].completed === false){
+    for (let i = 0; i < tasks.length; i++) {
+      if (!tasks[i].completed) {
         activeTaskIndex = i;
         break;
-      } else if (time === 0) {
-        i + 1;
       }
     }
 
-    if (activeTaskIndex !== -1){
-      const focusTask = tasks[activeTaskIndex].task;
-      return focusTask
-      // taskElement.push(<div key={i}>{focusTask}</div>)
+    return activeTaskIndex;
+  };
+
+  const logTasks = () => {
+    let activeTask = null;
+
+    for (let i = 0; i < tasks.length; i++) {
+      if (!tasks[i].completed) {
+        activeTask = tasks[i].task;
+        setInterval((setIsBreak (true)), 5000)
+        break;
+      }
     }
-    return "No tasks to focus on!"
-  }
+
+    return activeTask ? activeTask : "No tasks to focus on!";
+  };
 
   return (
     <div className="pomodoro-div">
@@ -79,7 +96,10 @@ const Pomodoro = () => {
       </div>
       <h3 className="pom-text" onClick={logTasks}>Time to focus!</h3>
       <div className="active-task">
-        {logTasks() && <div dangerouslySetInnerHTML={{ __html: logTasks() }} />}
+      {!isBreak && (
+          <div dangerouslySetInnerHTML={{ __html: logTasks() }} />
+        )}
+        {isBreak && <div>Take a break!</div>}
         </div>
       <div className="pomodoro-text">{formatTime(time)}</div>
       <div className="pom-button">
