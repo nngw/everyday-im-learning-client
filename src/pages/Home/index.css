@@ -2,12 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid red;
 }
 
 .main-container {
     display: flex;
     width: 70%;
     margin-top: 3rem;
+    border: 1px solid yellow;
 }
 
 .video {
@@ -37,6 +39,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid yellow;
 }
 .panda-home p {
     font-size: 1.8rem;
@@ -44,4 +47,33 @@
     text-align: center;
     width: 60%;
     margin-top: 3rem;
+}
+
+@media only screen and (max-width: 1400px) {
+    .video {
+        display: none;
+    }
+    .main-container {
+        width: 100%;
+        justify-content: right;
+    }
+    .panda-home {
+        width: 50%;
+    }
+    .panda-home p {
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .main-container {
+        width: 100%;
+        justify-content: center;
+    }
+    .panda-home {
+        width: 80%;
+        height: 40vh;
+    }
+    .panda-home p {
+        font-size: 1rem;
+    }
 }

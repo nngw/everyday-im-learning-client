@@ -1,12 +1,10 @@
 .login-container {
-  border: 1px solid red;
   width: 100%;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .login-container form {
   background-color: #9BE3C0;
   width: 35%;
@@ -64,5 +62,9 @@ input, label {
 .input-container input:focus {
   border-image: linear-gradient(to right, #358a61, #42af7a);
   border-image-slice: 1;
+}
+
+.input-container input::content {
+  background-color: transparent;
 }
 
