@@ -17,4 +17,5 @@ body{
     color: #272727;
     background-image: linear-gradient(to bottom, #DBFAF5, #BAF2E9);
     overflow: hidden;
+    z-index: 1;
 }
