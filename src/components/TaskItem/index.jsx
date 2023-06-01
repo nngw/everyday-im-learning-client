@@ -1,12 +1,11 @@
 import React, { useRef } from 'react'
-import { useDrag, useDrop } from 'react-dnd'
 import { useTasksContext }  from '../../hooks/useTasksConext'
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 import './style.css'
 
 const TaskItem = ({task,provided }) => {
-  //, text, index, moveListItem
+  
   const { dispatch } = useTasksContext()
   const { user } = useAuthContext()
   
