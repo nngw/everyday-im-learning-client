@@ -28,6 +28,7 @@ header {
     display: flex;
     align-items: center;
     margin-right: 1rem;
+    position: relative;
 }
 .main-nav a {
     text-decoration: none;
@@ -64,11 +65,32 @@ header {
     .burger-nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100%;
     padding-right: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
     }
-    .burger-nav-items {
-        display: none;
+    .burger-nav-items.active{
+        display: flex;
+        height: 10vh;
+        margin-top: 5rem;
+        border: 2px solid #42af7a;
+        background-color: #9BE3C0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+    }
+    .burger-nav-items.active a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 1rem;
+        border-right: 1px solid #6bdfa7;
+    }
+    .burger-nav-items.active a:hover {
+        background-color: #6bdfa7;
     }
 }

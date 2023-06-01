@@ -48,7 +48,7 @@ const Pomodoro = () => {
         <img src={image} alt="panda lying down" className="lying-panda" />
       </div>
       <h3 className="pom-text">Time to focus!</h3>
-      <div className="pomodoro-text">{formatTime(time)}</div>
+      <div className="pomodoro-text" data-testid="pomodoro-text">{formatTime(time)}</div>
       <div className="pom-button">
         {!isActive ? (
           <button onClick={handleStart} className="start-btn">Start</button>

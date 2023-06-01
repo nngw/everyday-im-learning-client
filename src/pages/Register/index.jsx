@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link} from 'react-router-dom'
 import { useSignup } from '../../hooks/useSignup'
 import Button from '../../components/Button/index'
 
@@ -23,7 +23,7 @@ const Register = () => {
 
         <div className='container-title'>
             <h3  className='reg-reg'>Register</h3>
-            <h3  className='login-reg'>Login</h3>
+            <h3  className='login-reg'><Link to='/login'> Login</Link></h3>
         </div>
 
         <div className="input-container">

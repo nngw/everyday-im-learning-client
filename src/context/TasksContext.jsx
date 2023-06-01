@@ -14,7 +14,7 @@ export const tasksReducer = (state, action) => {
       case 'CREATE_TASK':
         //console.log(state.tasks)
         return {
-        tasks: [action.payload,...state.tasks] 
+        tasks: [...state.tasks, action.payload] 
       }
 
     case 'DELETE_TASK':
