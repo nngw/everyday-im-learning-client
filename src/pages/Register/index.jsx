@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import {Link} from 'react-router-dom'
 import { useSignup } from '../../hooks/useSignup'
 import Button from '../../components/Button/index'
 
@@ -23,27 +23,36 @@ const Register = () => {
 
         <div className='container-title'>
             <h3  className='reg-reg'>Register</h3>
-            <h3  className='login-reg'>Login</h3>
+            <h3  className='login-reg'><Link to='/login'> Login</Link></h3>
         </div>
 
         <div className="input-container">
-        <label>Email address:</label>
-        <input 
+        <label
+          htmlFor='register-type-email'  
+        >Email:</label>
+        <input
+          id='register-type-email'
           type="email" 
           onChange={(e) => setEmail(e.target.value)} 
           value={email} 
         />
         </div>
         <div className="input-container">
-        <label>Password:</label>
+        <label
+          htmlFor='register-type-password'
+        >Password:</label>
         <input 
+          id='register-type-password'
           type="password" 
           onChange={(e) => setPassword(e.target.value)} 
           value={password} 
         />
         </div>
 
-        <Button name='Register' disabled={isLoading} />
+        <Button
+          aria-label='Sumbit new login details '
+          name='Register' 
+          disabled={isLoading} />
         {error && <div className="error">{error}</div>}
       </form>
     </div>
