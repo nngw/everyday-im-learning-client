@@ -70,7 +70,6 @@ function TaskForm () {
                 onChange={(e) => setTime(e.target.value)}
                 value={time}/> */}
         
-
             <button type="submit" className="task-button" aria-label="Submit tasks">Add Task</button>
         </form>
     )
