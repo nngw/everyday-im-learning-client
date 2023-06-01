@@ -27,23 +27,32 @@ const Register = () => {
         </div>
 
         <div className="input-container">
-        <label>Email address:</label>
-        <input 
+        <label
+          htmlFor='register-type-email'  
+        >Email:</label>
+        <input
+          id='register-type-email'
           type="email" 
           onChange={(e) => setEmail(e.target.value)} 
           value={email} 
         />
         </div>
         <div className="input-container">
-        <label>Password:</label>
+        <label
+          htmlFor='register-type-password'
+        >Password:</label>
         <input 
+          id='register-type-password'
           type="password" 
           onChange={(e) => setPassword(e.target.value)} 
           value={password} 
         />
         </div>
 
-        <Button name='Register' disabled={isLoading} />
+        <Button
+          aria-label='Sumbit new login details '
+          name='Register' 
+          disabled={isLoading} />
         {error && <div className="error">{error}</div>}
       </form>
     </div>
