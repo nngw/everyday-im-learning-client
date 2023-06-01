@@ -40,13 +40,6 @@ const TaskList = () => {
             })
           }
        }
-  
-    function addItemToArray(){
-      myArray.push(document.getElementById("txtMyText").value);
-      localStorage.setItem('textValues', JSON.stringify(myArray));
-      //------------^store the item by stringify--^
-      }
-
       
     }, [dispatch, user]);
   
