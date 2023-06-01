@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import MainTitle from '../../components/MainTitle/index'
 import Bamboo from '../../components/Bamboo/index'
 import Button from '../../components/Button/index'
@@ -18,7 +19,7 @@ const Home = () => {
             that helps you organise tasks, track productivity
             and most importantly protect your very own panda.
           </p>
-          <Button name='Register'/>
+          <Link to='/register'><Button name='Register'/></Link>
         </div>
       </div>
     </div>

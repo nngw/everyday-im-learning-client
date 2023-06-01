@@ -22,7 +22,7 @@ const NavBar = () => {
     logout()
   }
   
-  // console.log(burgerNav)
+
   return (
     <>
       <header role="banner">
@@ -32,12 +32,21 @@ const NavBar = () => {
           </div>
           <div>
               <nav className='main-nav'>
-                  <NavLink to="/" style={styles}>Home</NavLink>{' '}
-                  <NavLink to="/profile" style={styles}>Profile</NavLink>{' '}
-                  <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
-                  <NavLink to="/login" style={styles}>Login</NavLink>{' '}
-                  <NavLink to="/register" style={styles}>Register</NavLink>
-                  <span> <button onClick={handleClick} >Logout</button> </span>
+                <NavLink to="/" style={styles}>Home</NavLink>{' '}
+                {user && (
+                    <div>
+                        <NavLink to="/profile" style={styles}>Profile</NavLink>
+                        <NavLink to="/focus" style={styles}>Focus</NavLink>
+                        <NavLink onClick={handleClick} className='logout-nav'>Logout</NavLink>
+                    </div>
+                )}
+
+                {!user && (
+                    <div>
+                        <NavLink to="/login" style={styles}>Login</NavLink>
+                        <NavLink to="/register" style={styles}>Register</NavLink>
+                    </div>
+                )}
               </nav>
 
               <div onClick={BurgerNavClick} className='burger-nav'>
@@ -46,12 +55,22 @@ const NavBar = () => {
                 <div className='burger-line'></div>
               </div>
 
-              <div className='burger-nav-items'>
-                  <NavLink to="/" style={styles}>Home</NavLink>{' '}
-                  <NavLink to="/profile" style={styles}>Profile</NavLink>{' '}
-                  <NavLink to="/focus" style={styles}>Focus</NavLink>{' '}
-                  <NavLink to="/login" style={styles}>Login</NavLink>{' '}
-                  <NavLink to="/register" style={styles}>Register</NavLink>
+              <div className={`burger-nav-items ${burgerNav && 'active'}`}>
+                <NavLink to="/" style={styles}>Home</NavLink>{' '}
+                {user && (
+                    <>
+                        <NavLink to="/profile" style={styles}>Profile</NavLink>
+                        <NavLink to="/focus" style={styles}>Focus</NavLink>
+                        <NavLink onClick={handleClick} className='logout-nav'>Logout</NavLink>
+                    </>
+                )}
+
+                {!user && (
+                    <>
+                        <NavLink to="/login" style={styles}>Login</NavLink>
+                        <NavLink to="/register" style={styles}>Register</NavLink>
+                    </>
+                )}
               </div>
           </div>
       </header>

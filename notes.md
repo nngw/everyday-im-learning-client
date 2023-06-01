@@ -15,7 +15,7 @@
     position: relative;
 }
 .image-container {
-    margin-top: -13.5rem;
+    margin-top: -14rem;
 }
 .image-container img{
     width: 20rem;
@@ -31,14 +31,15 @@
 }
 .pom-text {
     font-size: 3rem;
-    margin-top: -3rem;
 }
 .pomodoro-text {
     font-size: 5rem;
 }
-.pom-buttons {
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-}
 
+.pomodoro-container {
+    display: flex;
+    bordeR: 1px solid blue;
+    height: 80vh;
+    justify-content: center;
+}
+overflow: hidden;

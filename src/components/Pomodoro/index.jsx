@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
-import StepProgressBar from '../../components/ProgressBar';
+import { useTasksContext }  from '../../hooks/useTasksConext'
+//import { useAuthContext } from '../../hooks/useAuthContext';
+import Button from '../Button/index'
 import './index.css'
 
 const Pomodoro = () => {
   const [isActive, setIsActive] = useState(false);
   const [time, setTime] = useState(25 * 60);
-
+  const {tasks, dispatch} = useTasksContext()
+  
   useEffect(() => {
     let interval = null;
 
@@ -56,20 +59,14 @@ const Pomodoro = () => {
         <img src={image} alt="panda lying down" className="lying-panda" />
       </div>
       <h3 className="pom-text">Time to focus!</h3>
-      <div className="pomodoro-time" data-testid="pomodoro-text">
-        {formatTime(time)}
-      </div>
-      <div>
+      <div className="pomodoro-text" data-testid="pomodoro-text">{formatTime(time)}</div>
+      <div className="pom-buttons">
         {!isActive ? (
-          <button onClick={handleStart} className="start-btn">
-            Start
-          </button>
+          <Button onClick={handleStart} className="start-btn" name='Start'></Button>
         ) : (
-          <button onClick={handlePause} className="start-btn">Pause</button>
+          <Button onClick={handlePause} name='Pause'></Button>
         )}
-        <button onClick={handleReset} className="reset-btn">
-          Reset
-        </button>
+        <Button onClick={handleReset} className="reset-btn" name='Reset'></Button>
       </div>
       <StepProgressBar percent={progressPercent} />
     </div>
