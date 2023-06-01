@@ -5,7 +5,9 @@ import './index.css'
 const Focus = () => {
   return (
     <>
+      <div className='pomodoro-container'>
         <Pomodoro />
+      </div>
     </>
   )
 }
