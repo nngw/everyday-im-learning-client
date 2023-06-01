@@ -4,3 +4,20 @@
     overflow-y: scroll;
     height: 100%;
 }
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+  ::-webkit-scrollbar-track {
+    background: #42af7a; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #9BE3C0;
+    border: 1px solid #42af7a;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DBFAF5; 
+  }
