@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import image from '../../../assets/images/lying_panda.png'
 import { useTasksContext } from '../../hooks/useTasksConext'
+import ProgressBarTest from '../ProgressBarTest/index'
 //import { useAuthContext } from '../../hooks/useAuthContext';
 // import Button from '../Button/index'
 import './index.css'
@@ -29,7 +30,7 @@ const Pomodoro = () => {
 
   useEffect(() => { //this will be used to determine if the user is on a break or not
     if (isBreak) {
-      setTime(5 * 60);
+      setTime(25 * 60);
     } else {
       setActiveTaskIndex(getNextIncompleteTaskIndex());
       setTime(25 * 60);
@@ -62,6 +63,15 @@ const Pomodoro = () => {
     const seconds = (time % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
   };
+
+  const calculateProgressPercent = (time) => {
+    const totalSeconds = 25 * 60;
+    const remainingSeconds = Math.max(0, time);
+    const percent = ((totalSeconds - remainingSeconds) / totalSeconds) * 100;
+    return percent;
+  };
+  
+  const progressPercent = calculateProgressPercent(time);
 
   const getNextIncompleteTaskIndex = () => {
     let activeTaskIndex = -1;
@@ -112,6 +122,7 @@ const Pomodoro = () => {
       </div>
       <div className="task-list">
       </div>
+      <ProgressBarTest percent={progressPercent} />
     </div>
   );  
 };
