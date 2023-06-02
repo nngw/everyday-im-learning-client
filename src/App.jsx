@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 
 import * as Pages from './pages'
-import { NavBar } from './components'
+import { NavBar, Footer } from './components'
 
 
 function App() {
@@ -34,6 +34,9 @@ function App() {
           <Route path="*" element={<Pages.NotFound/>}/>
         </Route>
       </Routes>
+      <div>
+        <Footer />
+      </div>
     </>
   )
 }
