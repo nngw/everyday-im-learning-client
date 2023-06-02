@@ -25,7 +25,16 @@
     background-color: #42af7a;
     border: 1px solid #DBFAF5;
   }
-
+  @media only screen and (max-width: 800px) {
+    .btn {
+      width: 8rem;
+    }
+}
+@media only screen and (max-width: 550px) {
+  .btn {
+    width: 6rem;
+  }
+}
 @media only screen and (max-width: 360px) {
   .btn {
     margin-top: 3.5rem;

@@ -1,7 +1,7 @@
 .pomodoro-div {
     background: #9BE3C0;
     width: 60%;
-    height: 50%;
+    height: 70%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     position: relative;
 }
 .image-container {
-    margin-top: -13.5rem;
+    margin-top: -10rem;
 }
 .image-container img{
     width: 20rem;
@@ -40,4 +40,24 @@
     width: 60%;
     display: flex;
     justify-content: space-around;
+}
+@media only screen and (max-width: 1450px) {
+    .pom-buttons {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .pom-text {
+        font-size: 2rem;
+        margin-top: -3rem;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .image-container {
+    margin-top: -10rem;
+}
+.image-container img{
+    width: 15rem;
+    height: 15rem;
+}
 }

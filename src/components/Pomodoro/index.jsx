@@ -102,7 +102,7 @@ const Pomodoro = () => {
         {isBreak && <div>Take a break!</div>}
         </div>
       <div className="pomodoro-text">{formatTime(time)}</div>
-      <div className="pom-button">
+      <div className="pom-buttons">
         {!isActive ? (
           <button onClick={handleStart} className="btn" name='Start'>Start</button>
         ) : (

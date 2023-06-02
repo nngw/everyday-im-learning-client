@@ -8,16 +8,17 @@ const WeeklyCalendar = () => {
     const [date, setDate] = useState(new Date());
 
     return (
-        <div className= 'calendar'>
-           <h1 className='text-center'>Panda Calendar</h1>
-           <div className='calendar-container'>
-        <Calendar onChange={setDate} value={date} />
+      <div className="calendar-container">
+          <div className= 'calendar'>
+              <div className='calendar-container'>
+            <Calendar onChange={setDate} value={date} />
+          </div>
+          <p className='text-center' data-testid='selected-date'>
+          <span className='bold'>Selected Date:</span>{' '}
+            {date.toDateString()}
+          </p>
+        </div>
       </div>
-      <p className='text-center' data-testid='selected-date'>
-      <span className='bold'>Selected Date:</span>{' '}
-        {date.toDateString()}
-      </p>
-    </div>
   );
 }
 
