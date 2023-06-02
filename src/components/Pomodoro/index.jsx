@@ -29,10 +29,10 @@ const Pomodoro = () => {
 
   useEffect(() => { //this will be used to determine if the user is on a break or not
     if (isBreak) {
-      setTime(1 * 30);
+      setTime(5 * 60);
     } else {
       setActiveTaskIndex(getNextIncompleteTaskIndex());
-      setTime(1 * 30);
+      setTime(25 * 60);
     }
   }, [isBreak]);
   
@@ -49,7 +49,7 @@ const Pomodoro = () => {
   const handleReset = () => {
     setIsActive(false);
     setIsBreak(false);
-    setTime(1 * 30);
+    setTime(25 * 60);
     setActiveTaskIndex(-1);
   };
 

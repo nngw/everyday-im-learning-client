@@ -11,7 +11,7 @@ const Home = () => {
       <MainTitle title='Protect The Pandas'/>
       <div className='main-container'>
         <div className='video'>
-          Video here
+          <video className='video-playback' src="../../../assets/videos/howToUse.mp4" type="video/mp4" autoPlay muted loop/>
         </div>
         <div className='panda-home'>
           <p>Protect the Panda! 
