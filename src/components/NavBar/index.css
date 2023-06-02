@@ -100,3 +100,9 @@ header {
         border-bottom: 1px solid #42af7a;
     }
 }
+
+.footer {
+    position: relative;
+    /* bottom: -120px; */
+    text-align: end;
+}

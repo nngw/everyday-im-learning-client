@@ -20,6 +20,13 @@
     width: 30%;
     height: 30vh;
 }
+
+.video-playback {
+    width: 100%;
+    height: 100%;
+    object-fit:cover
+}
+
 .panda-home {
     background-color: rgba(155, 227, 192);
     margin: 2rem;
