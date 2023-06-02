@@ -3,8 +3,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 80vh;
-    border: 1px solid blue;
+    margin-top:2rem;
 }
 .cal-form-container {
     display: flex;
