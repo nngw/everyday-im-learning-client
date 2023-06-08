@@ -12,7 +12,7 @@ const TaskList = () => {
   const {tasks, dispatch} = useTasksContext()
 
   async function loadTasks() {
-    const response = await fetch(`http://localhost:9000/tasks`,{
+    const response = await fetch(`https://protectthepanda-api.onrender.com/tasks`,{
       headers: {
         'Authorization': `Bearer ${user.token}`
       }
