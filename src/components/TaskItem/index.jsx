@@ -14,7 +14,7 @@ const TaskItem = ({task,provided }) => {
     
     const taskId = provided.draggableProps["data-rbd-draggable-id"]
     
-    const res = await fetch('http://localhost:9000/tasks/' + taskId, {
+    const res = await fetch('https://protectthepanda-api.onrender.com/tasks/' + taskId, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

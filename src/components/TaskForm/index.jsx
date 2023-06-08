@@ -34,7 +34,7 @@ function TaskForm () {
 
         const tasks = {task, time}
 
-        const res = await fetch('http://localhost:9000/tasks', {
+        const res = await fetch('https://protectthepanda-api.onrender.com/tasks', {
             method: 'POST',
             body: JSON.stringify(tasks),
             headers: {
